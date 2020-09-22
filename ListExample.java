@@ -1,6 +1,4 @@
-import java.util.List;
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.*;
 
 // http://tutorials.jenkov.com/java-collections/list.html
 public class ListExample {
@@ -21,6 +19,20 @@ public class ListExample {
 
 		l1.set(1, "xyz");
 		System.out.println(l1);
+
+		String[] array = l1.toArray(new String[l1.size()]);
+		System.out.println(Arrays.toString(array));
+		Arrays.sort(array);
+		System.out.println(Arrays.toString(array));
+		
+		Collections.sort(l1);
+		System.out.println(l1);
+
+		Iterator it = l1.iterator();
+
+		while(it.hasNext()) {
+			System.out.println("iterator: " + it.next());
+		}
 
 		List<Integer> l2 = new LinkedList<Integer>();
 		l2.add(123);
